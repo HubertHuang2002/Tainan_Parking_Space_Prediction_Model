@@ -93,14 +93,14 @@ For models other than GNN, the training and validation sets were kept unfiltered
 
 ###### 2.1.4 Imbalanced Data Handling
 
-We define a record as **"full"** if the number of available parking spaces is **less than 5% of the total capacity**. As shown in **Figure 3-9**, the dataset is highly imbalanced—only about **6%** of the training data represents full status—making it difficult for the model to learn the characteristics of full conditions.
+We define a record as **"full"** if the number of available parking spaces is **less than 5% of the total capacity**. As shown in **Figure 6**, the dataset is highly imbalanced—only about **6%** of the training data represents full status—making it difficult for the model to learn the characteristics of full conditions.
 
 To address this, we applied two strategies for handling class imbalance in the classification models:
 
 1. **SMOTE (Synthetic Minority Over-sampling Technique)**
 2. **Cost-Sensitive Learning**
 
-For SMOTE, we first performed a **sensitivity analysis using a logistic regression model**, varying the oversampling ratio to maximize the **F1 score**. As shown in **Figure 3-10**, the best F1 score was achieved when the minority class was oversampled to **50%** of the majority class. This ratio was adopted for the final training set.
+For SMOTE, we first performed a **sensitivity analysis using a logistic regression model**, varying the oversampling ratio to maximize the **F1 score**. As shown in **Figure 7**, the best F1 score was achieved when the minority class was oversampled to **50%** of the majority class. This ratio was adopted for the final training set.
 
 For cost-sensitive learning, we adjusted the weight of the minority class to be the **inverse of the class imbalance ratio**, while keeping the majority class weight at **1.0**.
 
